@@ -1,0 +1,16 @@
+version: '3'
+services:
+  vpn_proxy:
+    build: .
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+      - 1.1.1.1
+      - 1.0.0.1
+    environment:
+      - OPENVPN_USERNAME=
+      - OPENVPN_PASSWORD=
+    ports:
+      - 8040:8040
+    restart: always
+    privileged: true
